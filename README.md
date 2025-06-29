@@ -31,7 +31,7 @@ The entire processor is built **modularly**, with custom implementations for ins
 - **Separate instruction and data memory** (ROM/RAM) with load/store support  
 - **Modular design**, each datapath component implemented in a separate Verilog module  
 
-## System Architecture
+## Pipeline Architecture
 ```mermaid
 flowchart TD
     PC["Program Counter (PC)"] --> IMEM["Instruction Memory"]
