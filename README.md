@@ -30,3 +30,19 @@ The entire processor is built **modularly**, with custom implementations for ins
 - **Branching and Jumping** support including PC update logic, immediate shift, and JAL address construction  
 - **Separate instruction and data memory** (ROM/RAM) with load/store support  
 - **Modular design**, each datapath component implemented in a separate Verilog module  
+
+## System Architecture
+```mermaid
+flowchart TD
+    PC["Program Counter (PC)"] --> IMEM["Instruction Memory"]
+    IMEM --> DEC["Instruction Decode"]
+    DEC --> RF["Register File"]
+    DEC --> ALU
+    RF --> ALU
+    ALU --> DMEM["Data Memory"]
+    ALU --> WB["Write Back (Register File)"]
+    DMEM --> WB
+    WB --> RF
+    ALU --> BR["Branch Logic"]
+    BR --> PC
+```
